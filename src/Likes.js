@@ -2,7 +2,6 @@ import { connect } from "react-redux";
 import { incrementLikes, decrementLikes } from "./redux/actions";
 
 function Likes(props) {
-  console.log(props);
   return (
     <div className="button-controls">
       <button onClick={props.onIncrementLikes}>♥ {props.likes}</button>
@@ -10,15 +9,14 @@ function Likes(props) {
     </div>
   );
 }
-// функция устанавливающая состояние
+// функция устанавливающая состояние из redux
 function mapStateToProps(state) {
-  console.log("mapStateToProps > ", state);
   const { likesReducer } = state;
   return {
     likes: likesReducer.likes,
   };
 }
-
+// функция изменяющая состояние в redux хранилище
 function mapDispatchToProps(dispatch) {
   return {
     // функция прибавляющая лайки
@@ -31,5 +29,5 @@ function mapDispatchToProps(dispatch) {
     },
   };
 }
-
+// импортируемый из react-redux компонент connect, связывает компонент Likes с Redux
 export default connect(mapStateToProps, mapDispatchToProps)(Likes);

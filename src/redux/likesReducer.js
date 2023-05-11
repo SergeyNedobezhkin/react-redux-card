@@ -5,7 +5,6 @@ const initialState = {
 };
 // Reducer для Likes (выполняет действие приходящих action)
 export const likesReducer = (state = initialState, action) => {
-  console.log("likesReducer > ", action);
   switch (action.type) {
     case INCREMENT:
       return {
