@@ -10,8 +10,6 @@ const initialState = {
 };
 // Reducer для Comments (выполняет действие приходящих action)
 export const commentsReducer = (state = initialState, action) => {
-  console.log("Comments Reducer > ", action);
-
   switch (action.type) {
     case COMMENT_CREATE:
       return {

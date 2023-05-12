@@ -8,7 +8,6 @@ import SingleComment from "./SingleComment";
 function Comments(props) {
   const [textComment, setTextComment] = useState("");
   const comments = useSelector((state) => {
-    console.log("redux state >>> ", state);
     const { commentsReducer } = state;
     return commentsReducer.comments;
   });
