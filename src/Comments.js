@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { commentCreate } from "./redux/actions";
-import uniqid from "uniqid";
+import uniqid from "uniqid"; // ииспользую для генерации id
 import { useDispatch, useSelector } from "react-redux";
 import SingleComment from "./SingleComment";
 
@@ -20,7 +20,7 @@ function Comments(props) {
   };
   const handleSabmit = (e) => {
     e.preventDefault();
-    const id = uniqid();
+    const id = uniqid(); // использую для генерации id, подключена в package.json
     dispatch(commentCreate(textComment, id));
   };
   console.log("COMMENTS >>> ", comments);
