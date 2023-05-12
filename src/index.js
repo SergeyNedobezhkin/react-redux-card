@@ -9,13 +9,7 @@ import App from "./App";
 
 import reportWebVitals from "./reportWebVitals";
 
-const store = createStore(
-  rootReducer,
-  compose(
-    applyMiddleware(thunk)
-    // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
-);
+const store = createStore(rootReducer, compose(applyMiddleware(thunk)));
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -26,4 +20,4 @@ root.render(
   </Provider>
 );
 
-eportWebVitals();
+reportWebVitals();
